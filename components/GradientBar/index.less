@@ -1,0 +1,38 @@
+
+
+.gradient-bar {
+  min-height: 100px;
+  background: linear-gradient(90deg, #257bf9,#2426ca);
+  color: #fff;
+  display: flex;
+  padding: 40px;
+  img {
+    width: 90px;
+    line-height: 1.5;
+  }
+  .gradien-bar-container {
+     padding: 0 24px;
+  }
+  button {
+    background: none;
+    color: #fff;
+    border:1px solid #fff;
+    outline: none;
+    padding: 18px;
+    font-size: 14px;
+    border-radius: 4px;
+    width: 170px;
+  }
+  button:hover {
+    color: #d2e0f7;
+    border:1px solid #d2e0f7;
+    cursor: pointer;
+  }
+}
+
+@media(max-width: 744px){
+  .gradient-bar {
+    display: block;
+    text-align: center;
+  }
+}

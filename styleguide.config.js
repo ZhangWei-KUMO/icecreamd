@@ -22,10 +22,15 @@ module.exports = {
     },
     {
       name: 'Components',
-      content: 'examples/card.md',
-      components: '/components/**/*.jsx',
-      exampleMode: 'expand', // 'hide' | 'collapse' | 'expand'
-      usageMode: 'expand' // 'hide' | 'collapse' | 'expand'
+      content: 'examples/components.md',
+      components: '/components/GradientBar/*.jsx',
+      exampleMode: 'expand',
+      usageMode: 'expand'
+    },
+    {
+      name: 'Alert',
+      content: 'examples/alert.md',
+      components: '/components/Alert/*.jsx'
     }
   ]
 }

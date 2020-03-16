@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import "./index.less"
-class Card extends Component {
+class Alert extends Component {
   render() {
     return (
-      <div className="card">
-        {this.props.children}
+      <div className="alert">
+        <div>
+          <img src={this.props.image} />
+        </div>
+        <div className="alert-container">
+          <h3>{this.props.title}</h3>
+          <p>{this.props.content}</p>
+        </div>
       </div>
     )
   }
 }
 
-export default Card;
+export default Alert;
