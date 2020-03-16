@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import "./index.less";
 
-class Card extends Component {
+class Alert extends Component {
   render() {
     return React.createElement("div", {
-      className: "card"
-    }, this.props.children);
+      className: "alert"
+    }, React.createElement("div", null, React.createElement("img", {
+      src: this.props.image
+    })), React.createElement("div", {
+      className: "alert-container"
+    }, React.createElement("h3", null, this.props.title), React.createElement("p", null, this.props.content)));
   }
 
 }
 
-export default Card;
+export default Alert;

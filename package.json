@@ -1,6 +1,6 @@
 {
   "name": "icecreamd",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.8.7",
@@ -26,7 +26,8 @@
   "module": "es/index.js",
   "scripts": {
     "start": "npx styleguidist server",
-    "build": " npx styleguidist build"
+    "build": " npx styleguidist build",
+    "compile": "gulp compile"
   },
   "dependencies": {
     "less": "^3.11.1",
