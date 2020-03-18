@@ -19,7 +19,7 @@ function compile(modules) {
   // 移动less文件并转译less文件成css文件
   const less = gulp.src(['components/**/*.less', 'components/*.less']).pipe(
     through2.obj(function (file, encoding, next) {
-      this.push(file.clone());
+      // this.push(file.clone());
       transformLess(file.path)
         .then(css => {
           file.contents = Buffer.from(css);
