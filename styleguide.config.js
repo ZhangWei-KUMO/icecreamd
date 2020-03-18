@@ -31,6 +31,15 @@ module.exports = {
       name: 'Alert',
       content: 'examples/alert.md',
       components: '/components/Alert/*.jsx'
+    },
+    {
+      name: 'Header',
+      content: 'examples/header.md',
+      components: '/components/Header/*.jsx'
+    }, {
+      name: 'Icon',
+      content: 'examples/icon.md',
+      components: '/components/Icon/*.jsx'
     }
   ]
 }

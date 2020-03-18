@@ -16,6 +16,9 @@ module.exports = (modules) => {
           useBuiltIns: "usage"
         }
       ],
+    ],
+    plugins: [
+      "@babel/plugin-proposal-class-properties"
     ]
   }
 }
