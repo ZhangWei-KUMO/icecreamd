@@ -31,11 +31,17 @@ function compile(modules) {
         })
     })
   ).pipe(gulp.dest(modules === false ? esDir : libDir));
+  const svg = gulp.src(['components/**/*.svg']).pipe(
+    through2.obj(function (file, encoding, next) {
+      this.push(file.clone())
+    })
+  ).pipe(gulp.dest(modules === false ? esDir : libDir));
+
   const resource = ['components/**/*.jsx', 'components/*.js'];
   let jscode = gulp.src(resource);
   let jsStream = babelify(jscode, modules);
   console.log(jsStream)
-  return merge2([less, jsStream]);
+  return merge2([less, jsStream, svg]);
 };
 
 function babelify(js, modules) {

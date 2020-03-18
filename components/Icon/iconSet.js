@@ -4,7 +4,6 @@ import GuideBoarder from './SVG/GuideBoarder.svg';
 
 const iconSet = {
   guideBoarder: <GuideBoarder />
-
 }
 
 export default iconSet;

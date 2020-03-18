@@ -53,7 +53,13 @@ class Icon extends Component {
       return;
     }
   };
-
+  handleClick = () => {
+    let { trigger, type } = this.props;
+    if (trigger === "onClick") {
+      animationSet[type]();
+    }
+    return;
+  }
   handleMouseEnter = () => {
     let { trigger, type } = this.props;
     if (trigger === "mouseEnter") {
@@ -76,7 +82,11 @@ class Icon extends Component {
   render() {
     let { prefixCls, type, size } = this.props;
     return (
-      <div onMouseEnter={debounce(this.handleMouseEnter, 4000)} height={size} width={size}>
+      <div
+        height={size} width={size}
+        onMouseEnter={debounce(this.handleMouseEnter, 4000)}
+        onClick={debounce(this.handleClick, 4000)}
+      >
         <svg id="Capa_1" enableBackground="new 0 0 512 512" height={size} width={size}
           viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
           {this.renderSVG(iconSet[type])}
