@@ -37,7 +37,7 @@ function compile(modules) {
     })
   ).pipe(gulp.dest(modules === false ? esDir : libDir));
 
-  const resource = ['components/**/*.jsx', 'components/*.js'];
+  const resource = ['components/**/*.jsx', 'components/*.js', 'components/**/*.js'];
   let jscode = gulp.src(resource);
   let jsStream = babelify(jscode, modules);
   console.log(jsStream)
