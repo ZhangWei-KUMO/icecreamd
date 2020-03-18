@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/zhangwei/.nvm/versions/node/v12.1.0/bin/node /usr/local/Cellar/yarn/1.19.2/libexec/bin/yarn.js add --dev @babel/env
+  /Users/zhangwei/.nvm/versions/node/v12.1.0/bin/node /usr/local/Cellar/yarn/1.19.2/libexec/bin/yarn.js add --dev svg-inline-loade
 
 PATH: 
   /Users/zhangwei/.cargo/bin:/Users/zhangwei/.nvm/versions/node/v12.1.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Users/zhangwei/.cargo/bin:/Users/zhangwei/.nvm/versions/node/v12.1.0/bin:/Users/zhangwei/flutter/bin:/Users/zhangwei/flutter/bin
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.npmjs.org/@babel%2fenv: Not found
+  Error: https://registry.npmjs.org/svg-inline-loade: Not found
       at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.19.2/libexec/lib/cli.js:66927:18)
       at Request.self.callback (/usr/local/Cellar/yarn/1.19.2/libexec/lib/cli.js:140586:22)
       at Request.emit (events.js:196:13)
@@ -28,7 +28,9 @@ Trace:
 
 npm manifest: 
   {
-    "name": "card",
+    "name": "icecreamd",
+    "version": "0.0.3",
+    "license": "MIT",
     "devDependencies": {
       "@babel/core": "^7.8.7",
       "@babel/preset-env": "^7.8.7",
@@ -36,6 +38,7 @@ npm manifest:
       "autoprefixer": "^9.7.4",
       "babel-loader": "^8.0.6",
       "css-loader": "^3.4.2",
+      "file-loader": "^6.0.0",
       "gulp": "^4.0.2",
       "gulp-babel": "^8.0.0",
       "less-loader": "^5.0.0",
@@ -53,10 +56,15 @@ npm manifest:
     "module": "es/index.js",
     "scripts": {
       "start": "npx styleguidist server",
-      "build": " npx styleguidist build"
+      "build": " npx styleguidist build",
+      "compile": "gulp compile"
     },
     "dependencies": {
+      "@babel/plugin-proposal-class-properties": "^7.8.3",
+      "classnames": "^2.2.6",
+      "gsap": "^3.2.4",
       "less": "^3.11.1",
+      "prop-types": "^15.7.2",
       "react": "^16.13.0",
       "react-dom": "^16.13.0"
     },
@@ -172,6 +180,18 @@ Lockfile:
       invariant "^2.2.4"
       levenary "^1.1.1"
       semver "^5.5.0"
+  
+  "@babel/helper-create-class-features-plugin@^7.8.3":
+    version "7.8.6"
+    resolved "https://registry.yarnpkg.com/@babel/helper-create-class-features-plugin/-/helper-create-class-features-plugin-7.8.6.tgz#243a5b46e2f8f0f674dc1387631eb6b28b851de0"
+    integrity sha512-klTBDdsr+VFFqaDHm5rR69OpEQtO2Qv8ECxHS1mNhJJvaHArR6a1xTf5K/eZW7eZpJbhCx3NW1Yt/sKsLXLblg==
+    dependencies:
+      "@babel/helper-function-name" "^7.8.3"
+      "@babel/helper-member-expression-to-functions" "^7.8.3"
+      "@babel/helper-optimise-call-expression" "^7.8.3"
+      "@babel/helper-plugin-utils" "^7.8.3"
+      "@babel/helper-replace-supers" "^7.8.6"
+      "@babel/helper-split-export-declaration" "^7.8.3"
   
   "@babel/helper-create-regexp-features-plugin@^7.8.3", "@babel/helper-create-regexp-features-plugin@^7.8.8":
     version "7.8.8"
@@ -345,6 +365,14 @@ Lockfile:
       "@babel/helper-plugin-utils" "^7.8.3"
       "@babel/helper-remap-async-to-generator" "^7.8.3"
       "@babel/plugin-syntax-async-generators" "^7.8.0"
+  
+  "@babel/plugin-proposal-class-properties@^7.8.3":
+    version "7.8.3"
+    resolved "https://registry.yarnpkg.com/@babel/plugin-proposal-class-properties/-/plugin-proposal-class-properties-7.8.3.tgz#5e06654af5cd04b608915aada9b2a6788004464e"
+    integrity sha512-EqFhbo7IosdgPgZggHaNObkmO1kNUe3slaKu54d5OWvy+p9QIKOzK1GAEpAIsZtWVtPXUHSMcT4smvDrCfY4AA==
+    dependencies:
+      "@babel/helper-create-class-features-plugin" "^7.8.3"
+      "@babel/helper-plugin-utils" "^7.8.3"
   
   "@babel/plugin-proposal-dynamic-import@^7.8.3":
     version "7.8.3"
@@ -1992,6 +2020,11 @@ Lockfile:
       isobject "^3.0.0"
       static-extend "^0.1.1"
   
+  classnames@^2.2.6:
+    version "2.2.6"
+    resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
+    integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
+  
   clean-stack@^2.0.0:
     version "2.2.0"
     resolved "https://registry.yarnpkg.com/clean-stack/-/clean-stack-2.2.0.tgz#ee8472dbb129e727b31e8a10a427dee9dfe4008b"
@@ -3131,6 +3164,14 @@ Lockfile:
     dependencies:
       escape-string-regexp "^1.0.5"
   
+  file-loader@^6.0.0:
+    version "6.0.0"
+    resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-6.0.0.tgz#97bbfaab7a2460c07bcbd72d3a6922407f67649f"
+    integrity sha512-/aMOAYEFXDdjG0wytpTL5YQLfZnnTmLNjn+AIrJ/6HVnTfDqLsVKUUwkDf4I4kgex36BvjuXEn/TX9B/1ESyqQ==
+    dependencies:
+      loader-utils "^2.0.0"
+      schema-utils "^2.6.5"
+  
   file-uri-to-path@1.0.0:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/file-uri-to-path/-/file-uri-to-path-1.0.0.tgz#553a7b8446ff6f684359c445f1e37a05dacc33dd"
@@ -3578,6 +3619,11 @@ Lockfile:
     version "4.2.3"
     resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.3.tgz#4a12ff1b60376ef09862c2093edd908328be8423"
     integrity sha512-a30VEBm4PEdx1dRB7MFK7BejejvCvBronbLjht+sHuGYj8PHs7M/5Z+rt5lw551vZ7yfTCj4Vuyy3mSJytDWRQ==
+  
+  gsap@^3.2.4:
+    version "3.2.4"
+    resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.2.4.tgz#60c1e3e91a0b3b0ce2161da73b105ae495b13425"
+    integrity sha512-ssWh9xKV4COyOVFl4OdJmO5CIsUPaL5Fetw08dyBeAU8ZKS7jzlMgwtUOseXL8lvXq6amNNzD7/MdOLgeFWEIQ==
   
   gulp-babel@^8.0.0:
     version "8.0.0"
@@ -4439,6 +4485,13 @@ Lockfile:
     dependencies:
       minimist "^1.2.0"
   
+  json5@^2.1.2:
+    version "2.1.2"
+    resolved "https://registry.yarnpkg.com/json5/-/json5-2.1.2.tgz#43ef1f0af9835dd624751a6b7fa48874fb2d608e"
+    integrity sha512-MoUOQ4WdiN3yxhm7NEVJSJrieAo5hNSLQ5sj05OTRHPL9HOBy8u4Bu88jsC1jvqAdN+E1bJmsUcZH+1HQxliqQ==
+    dependencies:
+      minimist "^1.2.5"
+  
   jsprim@^1.2.2:
     version "1.4.1"
     resolved "https://registry.yarnpkg.com/jsprim/-/jsprim-1.4.1.tgz#313e66bc1e5cc06e438bc1b7499c2e5c56acb6a2"
@@ -4709,6 +4762,15 @@ Lockfile:
       big.js "^5.2.2"
       emojis-list "^3.0.0"
       json5 "^1.0.1"
+  
+  loader-utils@^2.0.0:
+    version "2.0.0"
+    resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-2.0.0.tgz#e4cace5b816d425a166b5f097e10cd12b36064b0"
+    integrity sha512-rP4F0h2RaWSvPEkD7BLDFQnvSf+nK+wr3ESUjNTyAGobqrijmW92zc+SO6d4p4B1wh7+B/Jg1mkQe5NYUEHtHQ==
+    dependencies:
+      big.js "^5.2.2"
+      emojis-list "^3.0.0"
+      json5 "^2.1.2"
   
   locate-path@^2.0.0:
     version "2.0.0"
@@ -5031,7 +5093,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
     integrity sha1-hX/Kv8M5fSYluCKCYuhqp6ARsF0=
   
-  minimist@^1.1.2, minimist@^1.2.0:
+  minimist@^1.1.2, minimist@^1.2.0, minimist@^1.2.5:
     version "1.2.5"
     resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
     integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
@@ -6866,7 +6928,7 @@ Lockfile:
       ajv-errors "^1.0.0"
       ajv-keywords "^3.1.0"
   
-  schema-utils@^2.6.0, schema-utils@^2.6.4:
+  schema-utils@^2.6.0, schema-utils@^2.6.4, schema-utils@^2.6.5:
     version "2.6.5"
     resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-2.6.5.tgz#c758f0a7e624263073d396e29cd40aa101152d8a"
     integrity sha512-5KXuwKziQrTVHh8j/Uxz+QUbxkaLW9X/86NBlx/gnKgtsZA2GIVMUn17qWhRFwF8jdYb3Dig5hRO/W5mZqy6SQ==

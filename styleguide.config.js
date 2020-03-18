@@ -11,7 +11,17 @@ module.exports = {
           test: /\.less$/,
           exclude: /node_modules/,
           use: ['style-loader', 'css-loader', 'less-loader']
-        }
+        },
+        {
+          test: /\.svg$/,
+          exclude: /node_modules/,
+          loader: 'svg-react-loader'
+        },
+        {
+          test: /\.(png|jpe?g|gif)$/i,
+          exclude: /node_modules/,
+          use: ['file-loader']
+        },
       ]
     }
   },
