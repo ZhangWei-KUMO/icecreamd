@@ -89,9 +89,9 @@ class Header extends Component {
         </svg>
         <div className="welcome-background">
           <div className="welcome-holder">
-            <h1>Icecream Design</h1>
-            <p>开箱即用的WebUI组件，创造高效前端工作</p>
-            <a>正式发布</a>
+            <h1>{this.props.title}</h1>
+            <p>{this.props.content}</p>
+            <a>{this.props.tag}</a>
           </div>
         </div>
       </div>
