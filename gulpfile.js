@@ -19,6 +19,7 @@ function compile(modules) {
   // 移动less文件并转译less文件成css文件
   const less = gulp.src(['components/**/*.less', 'components/*.less']).pipe(
     through2.obj(function (file, encoding, next) {
+
       // this.push(file.clone());
       transformLess(file.path)
         .then(css => {
@@ -49,8 +50,9 @@ function babelify(js, modules) {
   let stream = js.pipe(babel(babelConfig)).pipe(
     through2.obj(function (file, encoding, next) {
       this.push(file.clone());
-      const content = file.contents.toString(encoding);
+      const content = file.contents.toString(encoding).replace("./index.less", "./index.css");
       file.contents = Buffer.from(content);
+      this.push(file)
       next();
     })
   );
