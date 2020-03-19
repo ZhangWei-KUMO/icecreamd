@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import GuideBoarder from './SVG/GuideBoarder.svg';
 import debounce from '../util/debounce';
-import "./index.less";
 import animationSet from './animationSet';
 
 const iconSet = {

@@ -1,5 +1,7 @@
 ```js
 import GradientBar from '../components/GradientBar';
+import '../components/GradientBar/style/index.jsx';
+
 <GradientBar
 image="https://github.githubassets.com/images/modules/marketplace/action-icon-white.png"
 title="Welcome to icecream UI world" 

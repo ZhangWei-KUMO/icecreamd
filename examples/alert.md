@@ -1,5 +1,7 @@
 ```js
 import Alert from '../components/Alert';
+import '../components/Alert/style/index.jsx';
+
 <Alert
 image="https://github.githubassets.com/images/modules/site/sponsors/logo-mona.svg"
 title="Icecream library Tips" 

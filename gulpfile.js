@@ -1,7 +1,7 @@
 const path = require("path");
 const { series, parallel } = require("gulp");
 const gulp = require("gulp");
-
+const argv = require('minimist')(process.argv.slice(2));
 const babel = require("gulp-babel");
 const rimraf = require("rimraf");
 const webpack = require("webpack");
@@ -12,6 +12,8 @@ const getBabelCommonConfig = require("./getBabelCommonConfig");
 const cwd = process.cwd();
 const libDir = path.join.apply(path, [cwd, "lib/"]);
 const esDir = path.join.apply(path, [cwd, "es/"]);
+const getProjectPath = require("./getProjectPath");
+const packageJson = require(getProjectPath('package.json'));
 
 // 在Babel中默认为modules，只有明确设置为false才会关闭
 function compile(modules) {
@@ -19,11 +21,11 @@ function compile(modules) {
   // 移动less文件并转译less文件成css文件
   const less = gulp.src(['components/**/*.less', 'components/*.less']).pipe(
     through2.obj(function (file, encoding, next) {
-
-      // this.push(file.clone());
+      this.push(file.clone());
       transformLess(file.path)
         .then(css => {
           file.contents = Buffer.from(css);
+          // convert less files into css files
           file.path = file.path.replace(/\.less$/, '.css');
           this.push(file);
           next();
@@ -32,6 +34,7 @@ function compile(modules) {
         })
     })
   ).pipe(gulp.dest(modules === false ? esDir : libDir));
+  // clone svg files into target diractories
   const svg = gulp.src(['components/**/*.svg']).pipe(
     through2.obj(function (file, encoding, next) {
       this.push(file.clone())
@@ -40,8 +43,8 @@ function compile(modules) {
 
   const resource = ['components/**/*.jsx', 'components/*.js', 'components/**/*.js'];
   let jscode = gulp.src(resource);
+  // compile Javascript files
   let jsStream = babelify(jscode, modules);
-  console.log(jsStream)
   return merge2([less, jsStream, svg]);
 };
 
@@ -50,8 +53,9 @@ function babelify(js, modules) {
   let stream = js.pipe(babel(babelConfig)).pipe(
     through2.obj(function (file, encoding, next) {
       this.push(file.clone());
-      const content = file.contents.toString(encoding).replace("./index.less", "./index.css");
-      file.contents = Buffer.from(content);
+      const content = file.contents.toString(encoding);
+      let newContent = content.replace(/\.less/g, '.css')
+      file.contents = Buffer.from(newContent);
       this.push(file)
       next();
     })
@@ -71,9 +75,19 @@ gulp.task("compile-lib", done => {
   done()
 });
 
+// 发布
+gulp.task("publish", done => {
+  // Check the validation of the version number
+  const versionFine = packageJson.version.match(/^\d+\.\d+\.\d+$/);
+  // Check the difference 
+  const diffResult = checkDiff(packageJson.name, packageJson.version);
+})
+
 gulp.task("compile", series(parallel("compile-es", "compile-lib")));
 
-exports.compile = gulp.task("compile")
+exports.compile = gulp.task("compile");
+exports.publish = gulp.task("publish");
+
 exports.default = (done) => {
   console.log("请指定gulp任务");
   done();
