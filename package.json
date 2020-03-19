@@ -1,7 +1,11 @@
 {
   "name": "icecreamd",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZhangWei-KUMO/icecreamd"
+  },
   "devDependencies": {
     "@babel/core": "^7.8.7",
     "@babel/plugin-proposal-decorators": "^7.8.3",

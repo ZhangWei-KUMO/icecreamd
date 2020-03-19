@@ -1,9 +1,24 @@
-# Icecream Design
+# Icecream Blocks
 
-基于`styleguide`+`webpack4`+`gulp-babel`为基石的组件案例。目的是在教大家如何构建出一套企业内部的组件。
+A simple React UI Components library and create enjoyabled fontend work.
 
-### 开发模式
+## 📦 Install
 
+```bash
+npm install icecreamd
+# or
+yarn add icecreamd
 ```
-yarn start
+## 🔨 Usage
+
+```js
+// import your wanted components
+import { Button } from 'icecreamd';
+// import css
+import 'icecreamd/lib/Button/style/index.css';
+
+<Button type="primary">
+  Getting Start
+</Button>
 ```
+
