@@ -18,6 +18,27 @@ import Icon from '../components/Icon';
   size="120"
   trigger="onClick"
  />
+   <Icon 
+  type="finance" 
+  size="120"
+  trigger="onClick"
+ />
+   <Icon 
+  type="doubleCheck" 
+  size="120"
+  trigger="onClick"
+ />
+   <Icon 
+  type="icecream" 
+  size="120"
+  trigger="onClick"
+ />
+   <Icon 
+  type="industry" 
+  size="120"
+  trigger="onClick"
+ />
+
  </div>
 
 ```

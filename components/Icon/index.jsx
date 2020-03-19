@@ -4,7 +4,11 @@ import classNames from 'classnames';
 import GuideBoarder from './guideBoarder';
 import Navigator from './navigator';
 import Thermometer from './thermometer';
-
+import DoubleCheck from './doubleCheck';
+import Finance from './finance';
+import Icecream from './icecream';
+import Tools from './tools';
+import Industry from './industry';
 
 
 class Icon extends Component {
@@ -40,7 +44,12 @@ class Icon extends Component {
     const iconset = {
       guideBoarder: <GuideBoarder size={size} trigger={trigger} />,
       navigator: <Navigator size={size} trigger={trigger} />,
-      thermometer: <Thermometer size={size} trigger={trigger} />
+      thermometer: <Thermometer size={size} trigger={trigger} />,
+      doubleCheck: <DoubleCheck size={size} trigger={trigger} />,
+      tools: <Tools size={size} trigger={trigger} />,
+      finance: <Finance size={size} trigger={trigger} />,
+      icecream: <Icecream size={size} trigger={trigger} />,
+      industry: <Industry size={size} trigger={trigger} />
     };
     return (
       <span>

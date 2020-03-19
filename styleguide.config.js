@@ -30,12 +30,11 @@ module.exports = {
       name: 'Icecream UI library',
       content: 'examples/introduction.md'
     },
+
     {
-      name: 'Components',
-      content: 'examples/components.md',
-      components: '/components/GradientBar/*.jsx',
-      exampleMode: 'expand',
-      usageMode: 'expand'
+      name: 'Button',
+      content: 'examples/button.md',
+      components: '/components/Button/*.jsx'
     },
     {
       name: 'Alert',
@@ -50,6 +49,13 @@ module.exports = {
       name: 'Icon',
       content: 'examples/icon.md',
       components: '/components/Icon/*.jsx'
-    }
+    },
+    {
+      name: 'GradientBar',
+      content: 'examples/components.md',
+      components: '/components/GradientBar/*.jsx',
+      exampleMode: 'expand',
+      usageMode: 'expand'
+    },
   ]
 }

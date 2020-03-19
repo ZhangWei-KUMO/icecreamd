@@ -41,7 +41,7 @@ class Icon extends Component {
 
   animation = () => {
     var tl = new TimelineMax();
-    tl.from('#tem-left', 0.5, { scaleY: 0, transformOrigin: "bottom", ease: Bounce.easeOut })
+    tl.from('#tem-left', 0.5, { scaleX: 0, transformOrigin: "bottom", ease: Bounce.easeOut })
       .from('#tem-right', 0.2, { scaleX: 0, transformOrigin: "top", ease: Power2.easeOut })
       .from('#tem-silk-1', 1.5, { scaleY: 0, transformOrigin: "bottom", ease: Power2.easeOut })
       .from('#tem-silk-2', 0.3, { scaleX: 0, transformOrigin: "center", ease: Bounce.easeOut })

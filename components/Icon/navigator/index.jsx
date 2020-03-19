@@ -41,16 +41,10 @@ class Icon extends Component {
 
   animation = () => {
     var tl = new TimelineMax();
-    tl.from('#nav-left', 0.5, { scaleY: 0, transformOrigin: "center", ease: Bounce.easeOut })
-      .from('#nav-right', 0.2, { scaleX: 0, transformOrigin: "left", ease: Power2.easeOut })
-      .from('#nav-white-left', 0.3, { scaleY: 0, transformOrigin: "center", ease: Bounce.easeOut })
-      .from('#nav-white-right', 0.3, { scaleX: 0, transformOrigin: "center", ease: Bounce.easeOut })
-      .from('#nav-top-left', 0.5, { scale: 0, transformOrigin: "center", ease: Bounce.easeOut })
-      .from('#nav-top-right', 0.2, { scaleX: 0, transformOrigin: "center", ease: Circ.easeOut })
-      .from('#nav-bottom-left', 0.2, { scaleX: 0, transformOrigin: "center", ease: Circ.easeOut })
-      .from('#nav-bottom-right', 0.2, { scaleX: 0, transformOrigin: "center", ease: Circ.easeOut })
-      .from('#nav-center-left', 0.5, { scale: 0, transformOrigin: "center", ease: Bounce.easeOut })
-      .from('#nav-center-right', 0.2, { scaleX: 0, transformOrigin: "center", ease: Power2.easeOut })
+    tl.to("#compress-pointer", 0.5, { rotation: 720, transformOrigin: "center" })
+      .to("#compress-pointer", 0.5, { rotation: -20, transformOrigin: "center" })
+      .to("#compress-pointer", 1, { rotation: 20, transformOrigin: "center" })
+      .to("#compress-pointer", 1, { rotation: 0, transformOrigin: "center" })
   };
 
   handleClick = () => {
@@ -109,10 +103,12 @@ class Icon extends Component {
             <path d="m256.006 183.735v258.683c71.319 0 129.342-58.022 129.342-129.341-.001-71.32-58.023-129.342-129.342-129.342zm15 31.131c42.792 6.509 76.702 40.418 83.21 83.21h-83.21zm0 196.421v-83.21h83.21c-6.509 42.792-40.418 76.701-83.21 83.21z"
               fill="#f49d14" id="nav-center-right" />
             <g >
-              <g>
-                <path d="m321.141 247.941-93.7 36.571-36.57 93.699 93.699-36.57z" fill="#f3403f" /></g>
+              <g id="compress-pointer">
+                <path d="m321.141 247.941-93.7 36.571-36.57 93.699 93.699-36.57z" fill="#f3403f" />
+                <path d="m321.141 247.941-65.135 25.423v79.425l28.564-11.148z" fill="#d10040" />
+
+              </g>
             </g>
-            <path d="m321.141 247.941-65.135 25.423v79.425l28.564-11.148z" fill="#d10040" />
           </g>
         </svg>
       </span >
