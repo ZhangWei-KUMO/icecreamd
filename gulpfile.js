@@ -19,7 +19,7 @@ const packageJson = require(getProjectPath('package.json'));
 function compile(modules) {
   rimraf.sync(modules === false ? esDir : libDir);
   // 移动less文件并转译less文件成css文件
-  const less = gulp.src(['components/**/*.less', 'components/*.less']).pipe(
+  const less = gulp.src(['components/**/*.less', 'components/*.less', 'components/**/**/*.less']).pipe(
     through2.obj(function (file, encoding, next) {
       this.push(file.clone());
       transformLess(file.path)
