@@ -18,7 +18,7 @@ module.exports = (modules) => {
       ],
     ],
     plugins: [
-      "babel-plugin-inline-import-data-uri",
+      // "babel-plugin-inline-import-data-uri",
       "@babel/plugin-transform-member-expression-literals",
       "@babel/plugin-transform-object-assign",
       "@babel/plugin-transform-property-literals",
