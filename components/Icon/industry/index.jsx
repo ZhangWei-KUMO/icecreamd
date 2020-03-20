@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import { TimelineMax, Power2, Bounce, Circ } from "gsap";
+import { gsap, TimelineMax, Power2, Bounce, Circ } from "gsap";
+import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 import debounce from '../../util/debounce';
 
 class Icon extends Component {
@@ -25,7 +25,8 @@ class Icon extends Component {
   };
 
   componentDidMount() {
-    let { trigger, type } = this.props;
+    gsap.registerPlugin(CSSRulePlugin);
+    let { trigger } = this.props;
     if (trigger === "loaded") {
       this.animation()
       return;
@@ -40,6 +41,8 @@ class Icon extends Component {
   };
 
   animation = () => {
+    gsap.registerPlugin(MotionPathPlugin);
+
     var tl = new TimelineMax();
     tl.to('#industry-balancer', 1, { rotation: 20, transformOrigin: "center" })
       .to('#industry-balancer', 1, { rotation: 0, transformOrigin: "center" })
