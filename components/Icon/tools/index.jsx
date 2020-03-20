@@ -83,7 +83,7 @@ class Icon extends Component {
         onMouseEnter={debounce(this.handleMouseEnter, 4000)}
         onClick={debounce(this.handleClick, 4000)}
       >
-        <svg id="Capa_6" enable-background="new 0 0 512 512" height={size} width={size} viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g><g>
+        <svg id="Capa_6" enableBackground="new 0 0 512 512" height={size} width={size} viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><g><g>
           <g><path d="m0 447.616 427.893-427.894 64.386 64.386-427.894 427.892z" fill="#ce7000" /></g></g>
           <path d="m-40.329 259.196h605.132v45.525h-605.132z" fill="#823c08" transform="matrix(.707 -.707 .707 .707 -122.568 268.013)" />
           <path d="m511.996 367.155c.336-77.836-21.304-139.587-70.364-204.83l-91.956-91.955c-65.244-49.06-126.995-70.7-204.832-70.365 49.222 40.613 86.149 78.106 135.129 124.973l107.051 107.05c46.868 48.98 84.361 85.906 124.972 135.127z" fill="#f9ecd7" />

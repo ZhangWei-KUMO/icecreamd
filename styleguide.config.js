@@ -57,5 +57,19 @@ module.exports = {
       exampleMode: 'expand',
       usageMode: 'expand'
     },
+    {
+      name: 'Card',
+      content: 'examples/card.md',
+      components: '/components/Card/*.jsx',
+      exampleMode: 'expand',
+      usageMode: 'expand'
+    },
+    {
+      name: 'Footer',
+      content: 'examples/footer.md',
+      components: '/components/Footer/*.jsx',
+      exampleMode: 'expand',
+      usageMode: 'expand'
+    }
   ]
 }

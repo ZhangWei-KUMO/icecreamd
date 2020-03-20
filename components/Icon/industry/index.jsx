@@ -93,7 +93,7 @@ class Icon extends Component {
         onMouseEnter={debounce(this.handleMouseEnter, 4000)}
         onClick={debounce(this.handleClick, 4000)}
       >
-        <svg id="Capa_5" enable-background="new 0 0 514.607 514.607" height={size} width={size} viewBox="0 0 514.607 514.607" xmlns="http://www.w3.org/2000/svg"><g>
+        <svg id="Capa_5" enableBackground="new 0 0 514.607 514.607" height={size} width={size} viewBox="0 0 514.607 514.607" xmlns="http://www.w3.org/2000/svg"><g>
           <path id="industry-left" d="m33.769 225.092h30v289.516h-30z" fill="#ce7000" />
           <g id="industry-towar">
             <path d="m327.7 425.701 29.229-6.76-47.327-204.611v-161.966c0-28.865-23.483-52.349-52.349-52.349s-52.35 23.483-52.35 52.349v162.109l-47.293 204.468 29.229 6.76 13.194-57.04h114.474zm-44.991-194.515 8.965 38.758h-68.807l8.965-38.758zm-25.455-201.17c12.323 0 22.349 10.025 22.349 22.349v148.822h-44.698v-148.823c-.001-12.323 10.025-22.348 22.349-22.348zm-50.283 308.645 8.955-38.717h82.686l8.955 38.717z"

@@ -79,7 +79,7 @@ class Icon extends Component {
         onMouseEnter={debounce(this.handleMouseEnter, 3000)}
         onClick={debounce(this.handleClick, 3000)}
       >
-        <svg id="Capa_8" enable-background="new 0 0 512 512" height={size} width={size}
+        <svg id="Capa_8" enableBackground="new 0 0 512 512" height={size} width={size}
           viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
           <g>
             <g id="double-check-paper">
