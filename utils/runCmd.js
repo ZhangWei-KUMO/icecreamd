@@ -1,7 +1,6 @@
-'use strict';
 
 const isWindows = require('is-windows');
-const getRunCmdEnv = require('./utils/getRunCmdEnv');
+const getRunCmdEnv = require('./getRunCmdEnv');
 
 function runCmd(cmd, _args, fn) {
   const args = _args || [];

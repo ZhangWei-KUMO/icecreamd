@@ -7,14 +7,14 @@ const rimraf = require("rimraf");
 const webpack = require("webpack");
 const through2 = require('through2');
 const merge2 = require("merge2");
-const transformLess = require('./transformLess');
-const getBabelCommonConfig = require("./getBabelCommonConfig");
+const transformLess = require('./utils/transformLess');
+const getBabelCommonConfig = require("./utils/getBabelCommonConfig");
 const cwd = process.cwd();
 const libDir = path.join.apply(path, [cwd, "lib/"]);
 const esDir = path.join.apply(path, [cwd, "es/"]);
-const getProjectPath = require("./getProjectPath");
+const getProjectPath = require("./utils/getProjectPath");
 const packageJson = require(getProjectPath('package.json'));
-
+const runCmd = require("./utils/runCmd");
 // 在Babel中默认为modules，只有明确设置为false才会关闭
 function compile(modules) {
   rimraf.sync(modules === false ? esDir : libDir);
@@ -75,18 +75,33 @@ gulp.task("compile-lib", done => {
   done()
 });
 
-// 发布
-gulp.task("publish", done => {
-  // Check the validation of the version number
+/**
+ *  发布NPM新版本
+ *  npm run pub --npm-tag=0.2.1
+ * */
+gulp.task("pub", done => {
   const versionFine = packageJson.version.match(/^\d+\.\d+\.\d+$/);
-  // Check the difference 
-  const diffResult = checkDiff(packageJson.name, packageJson.version);
+  let tagString;
+  if (argv['npm-tag']) {
+    tagString = argv['npm-tag'];
+  }
+  if (!tagString && versionFine) {
+    tagString = 'next';
+  }
+  let args = ['publish'].concat(['--tag', tagString])
+  console.log(args)
+  runCmd("npm", args, code => {
+    console.log(code);
+    done();
+
+  })
+
 })
 
 gulp.task("compile", series(parallel("compile-es", "compile-lib")));
 
 exports.compile = gulp.task("compile");
-exports.publish = gulp.task("publish");
+exports.pub = gulp.task("pub");
 
 exports.default = (done) => {
   console.log("请指定gulp任务");
