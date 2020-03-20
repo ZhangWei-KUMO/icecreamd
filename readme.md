@@ -4,6 +4,7 @@ A simple React UI Components library and create enjoyabled fontend work.
 
 ## 📦 Install
 
+Offical Website: [doc.cloud-wave.cn](https://doc.cloud-wave.cn/)
 ```bash
 npm install icecreamd
 # or

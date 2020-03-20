@@ -1,5 +1,8 @@
 const path = require("path");
 const { series, parallel } = require("gulp");
+const { execSync } = require('child_process');
+var shell = require('shelljs');
+
 const gulp = require("gulp");
 const argv = require('minimist')(process.argv.slice(2));
 const babel = require("gulp-babel");
@@ -15,6 +18,7 @@ const esDir = path.join.apply(path, [cwd, "es/"]);
 const getProjectPath = require("./utils/getProjectPath");
 const packageJson = require(getProjectPath('package.json'));
 const runCmd = require("./utils/runCmd");
+const checkDiff = require("./utils/checkDiff");
 // 在Babel中默认为modules，只有明确设置为false才会关闭
 function compile(modules) {
   rimraf.sync(modules === false ? esDir : libDir);
@@ -80,29 +84,36 @@ gulp.task("compile-lib", done => {
  *  npm run pub --npm-tag=0.2.1
  * */
 gulp.task("pub", done => {
-  const versionFine = packageJson.version.match(/^\d+\.\d+\.\d+$/);
+  // 匹配当前版本号
+  let { version } = packageJson;
+  const versionFine = version.match(/^\d+\.\d+\.\d+$/);
   let tagString;
   if (argv['npm-tag']) {
     tagString = argv['npm-tag'];
   }
   if (!tagString && versionFine) {
-    tagString = 'next';
-  }
-  let args = ['publish'].concat(['--tag', tagString])
-  console.log(args)
-  runCmd("npm", args, code => {
-    console.log(code);
+    let args = ['publish'].concat(['--tag', tagString])
+    shell.exec(`npm publish --tag=${tagString}`);
+    shell.exec(`git tag ${version}`);
+    shell.exec('git push origin master:master');
     done();
-
-  })
-
+  } else {
+    shell.exec(`npm publish`);
+    shell.exec(`git tag ${version}`);
+    shell.exec('git push origin master:master');
+    done();
+  }
 })
 
 gulp.task("compile", series(parallel("compile-es", "compile-lib")));
+gulp.task("diff", series(done => {
+  let { name, version } = packageJson;
+  checkDiff(name, version, done)
+}));
 
 exports.compile = gulp.task("compile");
 exports.pub = gulp.task("pub");
-
+exports.diff = gulp.task("diff");
 exports.default = (done) => {
   console.log("请指定gulp任务");
   done();

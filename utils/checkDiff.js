@@ -1,4 +1,4 @@
-const { getProjectPath } = require('./projectHelper');
+const getProjectPath = require('./getProjectPath');
 
 const fs = require('fs');
 const chalk = require('chalk');
