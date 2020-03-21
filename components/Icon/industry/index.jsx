@@ -25,7 +25,7 @@ class Icon extends Component {
   };
 
   componentDidMount() {
-    gsap.registerPlugin(CSSRulePlugin);
+    gsap.registerPlugin(MotionPathPlugin);
     let { trigger } = this.props;
     if (trigger === "loaded") {
       this.animation()
