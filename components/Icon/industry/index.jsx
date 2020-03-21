@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { gsap, TimelineMax, Power2, Bounce, Circ } from "gsap";
-import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 import debounce from '../../util/debounce';
+import { MotionPathPlugin } from 'gsap/MotionPathPlugin'
 
 class Icon extends Component {
   static propTypes = {
