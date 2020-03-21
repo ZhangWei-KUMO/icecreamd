@@ -9,6 +9,8 @@ import Finance from './finance';
 import Icecream from './icecream';
 import Tools from './tools';
 import Industry from './industry';
+import { gsap } from 'gsap'
+import { CSSPlugin } from 'gsap/CSSPlugin'
 
 
 class Icon extends Component {
@@ -38,6 +40,10 @@ class Icon extends Component {
     } else {
       return svg
     }
+  }
+
+  componentDidMount() {
+    gsap.registerPlugin(CSSPlugin)
   }
   render() {
     let { size, type, trigger } = this.props;

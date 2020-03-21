@@ -22,7 +22,7 @@ class Header extends Component {
     let { circle_x, circle_y } = this.state;
     return (
       <div className="welcome-container">
-        <svg viewBox="0 0 1440 400">
+        <svg viewBox="0 0 1440 500">
           <g transform={`translate(${circle_x}, ${circle_y})`} opacity="1" frame="534">
             <g transform="matrix(1, 0, 0, 1, 0, 0)">
               <g transform="rotate(0, 170, 170)">
