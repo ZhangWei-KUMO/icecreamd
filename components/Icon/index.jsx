@@ -11,7 +11,7 @@ import Tools from './tools';
 import Industry from './industry';
 import { gsap } from 'gsap'
 import { CSSPlugin } from 'gsap/CSSPlugin'
-
+import { MotionPathPlugin } from 'gsap/MotionPathPlugin'
 
 class Icon extends Component {
   static propTypes = {
@@ -44,6 +44,7 @@ class Icon extends Component {
 
   componentDidMount() {
     gsap.registerPlugin(CSSPlugin)
+    gsap.registerPlugin(MotionPathPlugin)
   }
   render() {
     let { size, type, trigger } = this.props;
