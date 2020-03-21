@@ -9,6 +9,11 @@ import Finance from './finance';
 import Icecream from './icecream';
 import Tools from './tools';
 import Industry from './industry';
+import Rain from './rain';
+import CheckBoard from './checkBoard';
+import Feedback from './feedback';
+import Wifi from './wifi';
+
 import { gsap } from 'gsap'
 import { CSSPlugin } from 'gsap/CSSPlugin'
 
@@ -54,7 +59,11 @@ class Icon extends Component {
       tools: <Tools size={size} trigger={trigger} />,
       finance: <Finance size={size} trigger={trigger} />,
       icecream: <Icecream size={size} trigger={trigger} />,
-      industry: <Industry size={size} trigger={trigger} />
+      industry: <Industry size={size} trigger={trigger} />,
+      rain: <Rain size={size} trigger={trigger} />,
+      checkBoard: <CheckBoard size={size} trigger={trigger} />,
+      feedback: <Feedback size={size} trigger={trigger} />,
+      wifi: <Wifi size={size} trigger={trigger} />,
     };
     return (
       <span>
