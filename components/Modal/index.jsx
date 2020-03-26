@@ -34,11 +34,19 @@ class Modal extends Component {
     this.node && this.node.remove();
   };
 
+  remove = () => {
+    this.node && this.node.remove();
+  };
+
+  prevent = (e) => {
+    e.stopPropagation()
+  }
   renderModal = () => {
     let { prefixCls, title, children } = this.props;
     let modalName = classNames({ [`${prefixCls}-modal`]: true });
     return (
-      <div className={`${modalName}-mask`}>
+      <div className={`${modalName}-mask`} onClick={this.remove}>
+        <div className={`${modalName}-container`} onClick={this.prevent}></div>
         {title}
         {children}
       </div>
@@ -50,9 +58,7 @@ class Modal extends Component {
     if (isVisible) {
       let VirtulDOM = ReactDOM.createPortal(this.renderModal(), this.node);
       return (
-        <div className={modalName}>
-          {VirtulDOM}
-        </div>
+        this.node && ReactDOM.createPortal(this.renderModal(), this.node)
       )
     } else {
       return null

@@ -4,14 +4,21 @@
 
 .@{card-prefix} {
   &-mask {
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    background: #000;
-    opacity: 0.5;
-    z-index: 100;
+    background: rgba(0, 0, 0,0.7);
+    z-index: 1000;
+  }
+  &-container {
+    width: 500px;
+    height: 600px;
+    background: #fff;
+    border-radius: 12px;
+    margin:100px auto;
+    z-index: 1200;
   }
 }
 
