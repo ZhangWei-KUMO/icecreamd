@@ -30,7 +30,11 @@ module.exports = {
       name: 'Icecream UI library',
       content: 'examples/introduction.md'
     },
-
+    {
+      name: 'Modal',
+      content: 'examples/modal.md',
+      components: '/components/Modal/*.jsx'
+    },
     {
       name: 'Button',
       content: 'examples/button.md',

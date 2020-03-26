@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 class Footer extends Component {
   static propTypes = {
     prefixCls: PropTypes.string,
-    startYear: PropTypes.number | PropTypes.string,
+    startYear: PropTypes.number,
     company: PropTypes.string,
     webNo: PropTypes.string,
     policeNo: PropTypes.string,
