@@ -50,11 +50,6 @@ module.exports = {
       content: 'examples/header.md',
       components: '/components/Header/*.jsx'
     }, {
-      name: 'Icon',
-      content: 'examples/icon.md',
-      components: '/components/Icon/*.jsx'
-    },
-    {
       name: 'GradientBar',
       content: 'examples/components.md',
       components: '/components/GradientBar/*.jsx',

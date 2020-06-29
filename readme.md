@@ -2,6 +2,10 @@
 
 A simple React UI Components library and create enjoyabled fontend work.
 
+![](assets/alert.png)
+![](assets/bar.png)
+![](assets/card.png)
+
 ## 📦 Install
 
 Offical Website: [doc.cloud-wave.cn](https://doc.cloud-wave.cn/)

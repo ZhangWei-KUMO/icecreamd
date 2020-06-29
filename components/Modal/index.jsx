@@ -9,8 +9,10 @@ class Modal extends Component {
     this.state = {
       loading: false
     };
-    this.node = document.createElement('div');
+    if (!this.node) {
+      this.node = document.createElement('div');
 
+    }
   }
 
   static propTypes = {
@@ -35,20 +37,25 @@ class Modal extends Component {
   };
 
   remove = () => {
-    this.node && this.node.remove();
+    this.props.onCancel()
   };
 
   prevent = (e) => {
     e.stopPropagation()
   }
+
+
   renderModal = () => {
     let { prefixCls, title, children } = this.props;
     let modalName = classNames({ [`${prefixCls}-modal`]: true });
     return (
       <div className={`${modalName}-mask`} onClick={this.remove}>
-        <div className={`${modalName}-container`} onClick={this.prevent}></div>
-        {title}
-        {children}
+        <div className={`${modalName}-container`} onClick={this.prevent}>
+          <h2>{title}</h2>
+          <span className={`${modalName}-close`} onClick={this.remove}>X</span>
+          {children}
+        </div>
+
       </div>
     )
   }
@@ -56,7 +63,7 @@ class Modal extends Component {
     let { prefixCls, title, isVisible } = this.props;
     let modalName = classNames({ [`${prefixCls}-modal`]: true });
     if (isVisible) {
-      let VirtulDOM = ReactDOM.createPortal(this.renderModal(), this.node);
+      console.log(ReactDOM.createPortal(this.renderModal(), this.node))
       return (
         this.node && ReactDOM.createPortal(this.renderModal(), this.node)
       )
