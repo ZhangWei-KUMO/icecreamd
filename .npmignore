@@ -1,6 +1,8 @@
 components/
 node_modules/
 examples/
+.git*
+.DS_Store
 utils/
 assets/
 styleguide/
