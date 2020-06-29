@@ -2,9 +2,9 @@
 
 A simple React UI Components library and create enjoyabled fontend work.
 
-<img src="assets/alert.png"/>
-<img src="assets/bar.png"/>
-<img src="assets/card.png"/>
+<img src="./assets/alert.png"/>
+<img src="./assets/bar.png"/>
+<img src="./assets/card.png"/>
 
 ## 📦 Install
 

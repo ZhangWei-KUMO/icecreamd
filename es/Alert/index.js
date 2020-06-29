@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 
 class Alert extends Component {
   render() {
-    return React.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", {
       className: "alert"
-    }, React.createElement("div", null, React.createElement("img", {
+    }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("img", {
       src: this.props.image
-    })), React.createElement("div", {
+    })), /*#__PURE__*/React.createElement("div", {
       className: "alert-container"
-    }, React.createElement("h3", null, this.props.title), React.createElement("p", null, this.props.content)));
+    }, /*#__PURE__*/React.createElement("h3", null, this.props.title), /*#__PURE__*/React.createElement("p", null, this.props.content)));
   }
 
 }
