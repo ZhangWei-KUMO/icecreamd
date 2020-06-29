@@ -2,9 +2,9 @@
 
 A simple React UI Components library and create enjoyabled fontend work.
 
-<img src="./assets/alert.png"/>
-<img src="./assets/bar.png"/>
-<img src="./assets/card.png"/>
+<img src="https://test-1253763202.cos.ap-shanghai.myqcloud.com/products/card.png"/>
+<img src="https://test-1253763202.cos.ap-shanghai.myqcloud.com/products/bar.png"/>
+<img src="https://test-1253763202.cos.ap-shanghai.myqcloud.com/products/Alert.png"/>
 
 ## 📦 Install
 
@@ -27,3 +27,18 @@ import 'icecreamd/lib/Button/style/index.css';
 </Button>
 ```
 
+## Environment Support
+
+Modern browsers and Internet Explorer 11 (with polyfills)
+Server-side Rendering
+Electron
+
+| IE / Edge | Firefox /Chrome | Safari          | Electron        |
+| :-------- | :-------------- | :-------------- | :-------------- |
+| IE11,Edge | last 2 versions | last 2 versions | last 2 versions |
+
+
+## Link
+
+* [Document](https://cloud-wave.cn/icecream)
+* [Sponsors](https://cloud-wave.cn/)
