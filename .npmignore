@@ -3,3 +3,7 @@ node_modules/
 examples/
 utils/
 assets/
+styleguide/
+gulpfile.js
+styleguide.config.js
+yarn.lock
