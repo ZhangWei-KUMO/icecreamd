@@ -1,6 +1,6 @@
 {
   "name": "icecreamd",
-  "version": "0.3.9",
+  "version": "0.4.1-beta",
   "license": "MIT",
   "keywords": [
     "react components",
@@ -8,7 +8,7 @@
     "components",
     "UI library"
   ],
-  "homepage": "http://doc.cloud-wave.cn/",
+  "homepage": "http://cloud-wave.cn/",
   "bugs": {
     "url": "https://github.com/ZhangWei-KUMO/icecreamd/issues"
   },
@@ -68,7 +68,6 @@
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "classnames": "^2.2.6",
-    "gsap": "^3.2.4",
     "less": "^3.11.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",

@@ -1,14 +1,14 @@
-# Icecream Blocks
+# Icecream Design
 
 A simple React UI Components library and create enjoyabled fontend work.
 
-![](assets/alert.png)
-![](assets/bar.png)
-![](assets/card.png)
+<img src="assets/alert.png"/>
+<img src="assets/bar.png"/>
+<img src="assets/card.png"/>
 
 ## 📦 Install
 
-Offical Website: [doc.cloud-wave.cn](https://doc.cloud-wave.cn/)
+Offical Website: [cloud-wave.cn](https://cloud-wave.cn/)
 ```bash
 npm install icecreamd
 # or
