@@ -13,19 +13,15 @@
     width: 90px;
     line-height: 1.5;
   }
-}
-.gradient-bar {
-  min-height: 100px;
-  background: linear-gradient(90deg, #257bf9,#2426ca);
-  color: #fff;
-  display: flex;
-  padding: 40px;
-  img {
-    width: 90px;
-    line-height: 1.5;
-  }
-  .gradien-bar-container {
-     padding: 0 24px;
+  &-container {
+    padding: 0 24px;
+    width: 60%;
+    &-title {
+      color: #fff;
+    }
+    &-content {
+      color: #fff;
+    }
   }
   button {
     background: none;
@@ -45,7 +41,7 @@
 }
 
 @media(max-width: 744px){
-  .gradient-bar {
+  .@{card-prefix} {
     display: block;
     text-align: center;
   }

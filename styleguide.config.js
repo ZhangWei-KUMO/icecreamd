@@ -31,6 +31,11 @@ module.exports = {
       content: 'examples/introduction.md'
     },
     {
+      name: 'PriceBoard',
+      content: 'examples/PriceBoard.md',
+      components: '/components/PriceBoard/*.jsx'
+    },
+    {
       name: 'Modal',
       content: 'examples/modal.md',
       components: '/components/Modal/*.jsx'

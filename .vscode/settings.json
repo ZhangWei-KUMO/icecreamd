@@ -1,0 +1,10 @@
+{
+  "eslint.validate": [],
+  "eslint.codeAction.disableRuleComment": {},
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": true,
+  "eslint.options": {},
+  "eslint.alwaysShowStatus": true,
+  "eslint.debug": true,
+  "hediet.vscode-drawio.customLibraries": []
+}

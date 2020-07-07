@@ -14,9 +14,10 @@ class GradientBar extends Component {
 
   static defaultProps = {
     prefixCls: 'ice',
-    title: '请填写标题',
-    content: '请填写文章内容',
-    image: 'https://gw.alipayobjects.com/mdn/rms_08e378/afts/img/A*yQqmQ514NNIAAAAAAAAAAABkARQnAQ',
+    title: 'Your Title',
+    content: 'Please input your content text',
+    buttonName:'Expand More',
+    image: "https://github.githubassets.com/images/modules/marketplace/action-icon-white.png",
     moment: '2020-3-20',
     link: "/#"
   };
@@ -24,15 +25,15 @@ class GradientBar extends Component {
   render() {
     let { prefixCls, title, content, image, moment, link } = this.props;
     let barName = classNames({ [`${prefixCls}-bar`]: true });
-    let containerName = classNames({ [`${prefixCls}-card-container`]: true });
+    let containerName = classNames({ [`${prefixCls}-bar-container`]: true });
     return (
       <div className={barName}>
         <div>
-          <img src={this.props.image} />
+          <img src={this.props.image} className={`${barName}-img`}/>
         </div>
         <div className={containerName}>
-          <h3>{this.props.title}</h3>
-          <p>{this.props.content}</p>
+          <h3 className={`${containerName}-title`}>{this.props.title}</h3>
+          <p className={`${containerName}-content`}>{this.props.content}</p>
         </div>
         <div>
           <a href={this.props.link}>

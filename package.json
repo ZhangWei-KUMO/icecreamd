@@ -36,6 +36,8 @@
     "babel-plugin-inline-import-data-uri": "^1.0.1",
     "chalk": "^3.0.0",
     "css-loader": "^3.4.2",
+    "eslint": "^7.4.0",
+    "eslint-plugin-react": "^7.20.3",
     "file-loader": "^6.0.0",
     "glob": "^7.1.6",
     "gulp": "^4.0.2",
