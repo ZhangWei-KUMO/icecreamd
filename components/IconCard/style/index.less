@@ -1,0 +1,46 @@
+
+@import "../../style/theme.less";
+
+@card-prefix: ~'@{rc-prefix}-iconcard';
+a {text-decoration: none}
+
+.@{card-prefix} {
+  box-shadow: rgba(27, 31, 35, 0.15) 0px 1px 5px;
+  background-color: #fff;
+  background-size: cover;
+  background-position: center top;
+  padding:24px;
+  margin-bottom: 24px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+  min-height: 200px;
+
+  &-img {
+    width: 46px;
+    height: 46px;
+  }
+    &-ciclebadget {
+      display: flex;
+      text-align: center;
+      margin: 20px auto;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(255, 255, 255);
+      box-shadow: rgba(27, 31, 35, 0.15) 0px 1px 5px;
+      border-radius: 50%;
+      width: 96px;
+      height: 96px;
+    }
+    &-ciclebadget-float{
+      position: relative;
+      top: 0;
+      transition:top .15s ease-in,box-shadow .12s ease-in;
+    }
+  }
+
+.@{card-prefix}:hover .@{card-prefix}-ciclebadget-float{
+  top: -3px;
+  box-shadow: 0 3px 8px 0 rgba(0,0,0,.2);
+}

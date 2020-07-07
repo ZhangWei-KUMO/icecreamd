@@ -1,6 +1,6 @@
 ```js
-import PriceBoard from '../components/PriceBoard';
-import '../components/PriceBoard/style/index.jsx';
+import IconCard from '../components/IconCard';
+import '../components/IconCard/style/index.jsx';
 
-<PriceBoard/>
+<IconCard/>
 ```

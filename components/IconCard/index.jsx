@@ -1,11 +1,14 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 
 class Iconcard extends PureComponent {
   render() {
     const {
       prefixCls, title, link, background, icon, iconColor, color
     } = this.props;
+    const iconcardName = classNames({ [`${prefixCls}-iconcard`]: true });
+
     return (
       <>
         <a
@@ -13,14 +16,14 @@ class Iconcard extends PureComponent {
           target="__blank"
         >
           <div
-            className={`${prefixCls}-iconcard`}
+            className={iconcardName}
             style={{ backgroundImage: `url(${background})` }}
           >
             <div
-              className={`${prefixCls}-ciclebadget ${prefixCls}-ciclebadget-float`}
+              className={`${iconcardName}-ciclebadget ${iconcardName}-ciclebadget-float`}
               style={{ backgroundColor: `${iconColor}` }}
             >
-              <img src={icon} alt="浪视频" />
+              <img src={icon} alt="浪视频" className={`${iconcardName}-img`} />
             </div>
             <h2 style={{ color }}>{title}</h2>
           </div>
@@ -42,10 +45,10 @@ Iconcard.propTypes = {
 
 Iconcard.defaultProps = {
   prefixCls: "ice",
-  title: "",
+  title: "Your title",
   link: "#",
   background: "https://marketplace-images.githubusercontent.com/703/15031fc4-e40e-11e7-9e6c-42cd55ee6584?auto=webp&format=jpeg&width=600",
-  icon: "https://avatars1.githubusercontent.com/ml/283?s=106&v=4",
+  icon: "https://cloud-wave.cn/images/h5-icon.png",
   iconColor: "#45D298",
   color: "#000"
 };

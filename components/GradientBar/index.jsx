@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import classNames from 'classnames';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import classNames from "classnames";
+import PropTypes from "prop-types";
 
 class GradientBar extends Component {
   static propTypes = {
@@ -9,27 +9,29 @@ class GradientBar extends Component {
     content: PropTypes.string,
     moment: PropTypes.string,
     image: PropTypes.string,
-    link: PropTypes.string,
+    link: PropTypes.string
   };
 
   static defaultProps = {
-    prefixCls: 'ice',
-    title: 'Your Title',
-    content: 'Please input your content text',
-    buttonName:'Expand More',
+    prefixCls: "ice",
+    title: "Your Title",
+    content: "Please input your content text",
+    buttonName: "Expand More",
     image: "https://github.githubassets.com/images/modules/marketplace/action-icon-white.png",
-    moment: '2020-3-20',
+    moment: "2020-3-20",
     link: "/#"
   };
 
   render() {
-    let { prefixCls, title, content, image, moment, link } = this.props;
-    let barName = classNames({ [`${prefixCls}-bar`]: true });
-    let containerName = classNames({ [`${prefixCls}-bar-container`]: true });
+    const {
+      prefixCls, title, content, image, moment, link
+    } = this.props;
+    const barName = classNames({ [`${prefixCls}-bar`]: true });
+    const containerName = classNames({ [`${prefixCls}-bar-container`]: true });
     return (
       <div className={barName}>
         <div>
-          <img src={this.props.image} className={`${barName}-img`}/>
+          <img src={this.props.image} className={`${barName}-img`} />
         </div>
         <div className={containerName}>
           <h3 className={`${containerName}-title`}>{this.props.title}</h3>
@@ -43,7 +45,7 @@ class GradientBar extends Component {
           </a>
         </div>
       </div>
-    )
+    );
   }
 }
 
