@@ -1,5 +1,19 @@
 
+@import "../../style/theme.less";
 
+@card-prefix: ~'@{rc-prefix}-bar';
+
+.@{card-prefix} {
+  min-height: 100px;
+  background: linear-gradient(90deg, #257bf9,#2426ca);
+  color: #fff;
+  display: flex;
+  padding: 40px;
+  &-img {
+    width: 90px;
+    line-height: 1.5;
+  }
+}
 .gradient-bar {
   min-height: 100px;
   background: linear-gradient(90deg, #257bf9,#2426ca);
