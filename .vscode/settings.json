@@ -1,10 +1,21 @@
 {
-  "eslint.validate": [],
-  "eslint.codeAction.disableRuleComment": {},
+  "eslint.validate": [
+   
+  ],
+  "eslint.codeAction.disableRuleComment": {
+
+  },
   "eslint.format.enable": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": true,
   "eslint.lintTask.enable": true,
-  "eslint.options": {},
+  "eslint.options": {
+    "extensions": [".jsx", ".js"]
+  },
   "eslint.alwaysShowStatus": true,
   "eslint.debug": true,
-  "hediet.vscode-drawio.customLibraries": []
+  "hediet.vscode-drawio.customLibraries": [],
+  "eslint.enable": true,
 }
