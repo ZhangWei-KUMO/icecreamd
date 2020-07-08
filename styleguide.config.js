@@ -31,6 +31,11 @@ module.exports = {
       content: "examples/introduction.md"
     },
     {
+      name: "Loading",
+      content: "examples/loading.md",
+      components: "/components/Loading/*.jsx"
+    },
+    {
       name: "IconCard",
       content: "examples/IconCard.md",
       components: "/components/IconCard/*.jsx"
