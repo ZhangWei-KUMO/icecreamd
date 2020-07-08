@@ -1,33 +1,62 @@
-.btn {
+@import "../../style/theme.less";
+
+@card-prefix: ~'@{rc-prefix}-btn';
+
+.@{card-prefix} {
   border-radius: 20px;
   padding: 10px 20px;
   outline: none;
-  margin:10px
+  margin:10px;
+  &-empty {
+    color: #0170fe;
+    border:1px solid #0170fe;
+    background:  none; 
+  }
+  &-empty:hover {
+    color: #4492f8;
+    border:1px solid #4492f8;
+  }
+  &-primary {
+    color: #fff;
+    background:  #4492f8;
+    border:1px solid #4492f8;
+  }
+  &-primary:hover {
+    color: #0170fe;
+    border:1px solid #0170fe;
+    background:none; 
+  }
+  &-green {
+    color: #fff;
+    background:  #45d298;
+    border:1px solid #45d298;
+  }
+  &-green:hover {
+    color: #45d298;
+    border:1px solid #45d298;
+    background:none; 
+  }
+  &-danger {
+    color: #fff;
+    background:  #fc4424;
+    border:1px solid #fc4424;
+  }
+  &-danger:hover {
+    color: #fc4424;
+    border:1px solid #fc4424;
+    background:none; 
+  }
+  &-warn {
+    color: #fff;
+    background:  #f8b31e;
+    border:1px solid #f8b31e;
+  }
+  &-warn:hover {
+    color: #f8b31e;
+    border:1px solid #f8b31e;
+    background:none; 
+  }
 }
-
-.btn-empty {
-  color: #0170fe;
-  border:1px solid #0170fe;
-  background:  none;
-  
-}
-
-.btn-primary {
-  background:  #0170fe;
-  border:1px solid #0170fe;
-  color: #fff;
-}
-
-.btn-primary:hover {
-  background:  #4492f8;
-  border:1px solid #4492f8;
-}
-
-.btn-empty:hover {
-  color: #4492f8;
-  border:1px solid #4492f8;
-}
-
-.btn:hover {
+.@{card-prefix}:hover {
   cursor: pointer;
 }

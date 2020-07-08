@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 
-class GradientBar extends Component {
+class GradientBar extends PureComponent {
   static propTypes = {
     prefixCls: PropTypes.string,
     title: PropTypes.string,

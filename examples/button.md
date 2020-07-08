@@ -10,5 +10,17 @@ import '../components/Button/style/index.jsx';
 <Button>
   Github Repo
 </Button>
+
+<Button type="danger">
+ Error
+</Button>
+
+<Button type="warn">
+ Warn
+</Button>
+
+<Button type="green">
+  Agree
+</Button>
 </div>
 ```
