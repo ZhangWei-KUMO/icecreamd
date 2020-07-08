@@ -22,5 +22,9 @@ import '../components/Button/style/index.jsx';
 <Button type="green">
   Agree
 </Button>
+
+<Button type="option">
+  Select Me
+</Button>
 </div>
 ```

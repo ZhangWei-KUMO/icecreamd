@@ -6,3 +6,5 @@ export { default as Card } from "./Card";
 export { default as Footer } from "./Footer";
 export { default as Modal } from "./Modal";
 export { default as IconCard } from "./IconCard";
+export { default as Loading } from "./Loading";
+export { default as Tip } from "./Tip";

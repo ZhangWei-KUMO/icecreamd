@@ -56,6 +56,35 @@
     border:1px solid #f8b31e;
     background:none; 
   }
+  &-option {
+    margin-top:0;
+    position:relative;
+    width:150px;
+    height:40px;
+    display:inline-block;
+    border-radius:3px;
+    margin-left:5px;
+    margin-right:5px;
+    &:hover &-shape{
+      stroke-dasharray:50 0;
+      stroke-width:3px;
+      stroke-dashoffset:0;
+      stroke:#06D6A0
+   }
+    &-shape{
+      stroke-width:6px;
+      fill:transparent;
+      stroke:#009FFD;
+      stroke-dasharray:85 400;
+      stroke-dashoffset:-220;
+      transition:1s all ease
+    }
+    &-text{
+      margin-top:-35px;
+      text-align:center;
+      color:#000;
+   }
+  }
 }
 .@{card-prefix}:hover {
   cursor: pointer;
