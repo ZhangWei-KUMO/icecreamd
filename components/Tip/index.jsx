@@ -16,7 +16,6 @@ class Tip extends Component {
   componentDidMount() {
     const rect = ReactDOM.findDOMNode(this);
     const { top } = rect.getBoundingClientRect();
-    console.log(top);
     if (top > 200) {
       this.setState({
         direction: "down"
@@ -39,13 +38,13 @@ class Tip extends Component {
     const style = {};
     const arrow = {};
     if (direction === "down") {
-      style.top = "40px";
+      style.top = "60px";
       arrow.boxShadow = "-5px -10px 12px 0 rgba(0,0,0,.1)";
       arrow.top = "-8px";
       arrow.borderTop = "10px solid #fff";
       arrow.borderLeft = "10px solid #fff";
     } else {
-      style.bottom = "0px";
+      style.bottom = "60px";
       arrow.boxShadow = "18px 2px 14px 0 rgba(0,0,0,.2)";
       arrow.bottom = "-8px";
       arrow.borderBottom = "10px solid #fff";
