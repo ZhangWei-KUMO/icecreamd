@@ -1,27 +1,77 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
+import ReactDOM from "react-dom";
 
-function Tip(props) {
-  const [visible, setVisible] = useState(false);
+class Tip extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      visible: false,
+      direction: "up"
+    };
+    this.elerefs = React.createRef();
+  }
 
-  const {
-    prefixCls, children, content
-  } = props;
-  const tipName = classNames({ [`${prefixCls}-tip`]: true });
-  return (
-    <div
-      className={tipName}
-      onMouseLeave={() => setVisible(false)}
-      onMouseEnter={() => setVisible(true)}
-    >
-      <div className={`${tipName}-box`} style={{ display: visible ? "block" : "none" }}>
-        {content}
-        <div className={`${tipName}-box-arrow`} />
+  componentDidMount() {
+    const rect = ReactDOM.findDOMNode(this);
+    const { top } = rect.getBoundingClientRect();
+    console.log(top);
+    if (top > 200) {
+      this.setState({
+        direction: "down"
+      });
+    }
+  }
+
+  setVisible = (bool) => {
+    this.setState({
+      visible: bool
+    });
+  }
+
+  render() {
+    const {
+      prefixCls, children, content
+    } = this.props;
+    const { visible, direction } = this.state;
+    const tipName = classNames({ [`${prefixCls}-tip`]: true });
+    const style = {};
+    const arrow = {};
+    if (direction === "down") {
+      style.top = "40px";
+      arrow.boxShadow = "-5px -10px 12px 0 rgba(0,0,0,.1)";
+      arrow.top = "-8px";
+      arrow.borderTop = "10px solid #fff";
+      arrow.borderLeft = "10px solid #fff";
+    } else {
+      style.bottom = "0px";
+      arrow.boxShadow = "18px 2px 14px 0 rgba(0,0,0,.2)";
+      arrow.bottom = "-8px";
+      arrow.borderBottom = "10px solid #fff";
+      arrow.borderRight = "10px solid #fff";
+    }
+
+    return (
+      <div
+        className={tipName}
+        onMouseLeave={() => this.setVisible(false)}
+        onMouseEnter={() => this.setVisible(true)}
+      >
+        <div
+          className={`${tipName}-box`}
+          style={({ display: visible ? "block" : "none", ...style })}
+        >
+          <div
+            className={`${tipName}-box-arrow`}
+            style={arrow}
+          />
+          {content}
+        </div>
+        {children}
       </div>
-      {children}
-    </div>
-  );
+    );
+  }
 }
 
 Tip.propTypes = {

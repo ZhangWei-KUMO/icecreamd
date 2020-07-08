@@ -3,9 +3,16 @@ module.exports = {
     module: {
       rules: [
         {
-          test: /\.jsx$/,
-          exclude: /node_modules/,
-          use: ["babel-loader"]
+          loader: "babel-loader",
+          test: /\.(js|jsx)$/,
+          query: {
+            plugins: [
+              ["@babel/plugin-transform-modules-commonjs", {
+                allowTopLevelThis: false
+              }]
+            ],
+            presets: [["@babel/env", { targets: { node: 6 } }]]
+          }
         },
         {
           test: /\.less$/,
