@@ -8,7 +8,8 @@ A simple React UI Components library and create enjoyabled fontend work.
 
 ## 📦 Install
 
-Offical Website: [cloud-wave.cn](https://cloud-wave.cn/)
+* [Document](https://cloud-wave.cn/icecream)
+  
 ```bash
 npm install icecreamd
 # or
@@ -38,7 +39,4 @@ Electron
 | IE11,Edge | last 2 versions | last 2 versions | last 2 versions |
 
 
-## Link
 
-* [Document](https://cloud-wave.cn/icecream)
-* [Sponsors](https://cloud-wave.cn/)
