@@ -2,10 +2,6 @@
 
 A simple React UI Components library and create enjoyabled fontend work.
 
-<img src="https://test-1253763202.cos.ap-shanghai.myqcloud.com/products/card.png"/>
-<img src="https://test-1253763202.cos.ap-shanghai.myqcloud.com/products/bar.png"/>
-<img src="https://test-1253763202.cos.ap-shanghai.myqcloud.com/products/alert.png"/>
-
 ## 📦 Install
 
 * [Document](https://cloud-wave.cn/icecream)
